@@ -1,0 +1,21 @@
+<div class="mx-auto p-2 m-5" style="width: 400px;">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Restaurant details</h5>
+    <p class="card-text">Name: <%= @restaurant.name %></p>
+     <p class="card-text">Address: <%= @restaurant.address %></p>
+      <p class="card-text">Phone Number: <%= @restaurant.phone_number %></p>
+       <p class="card-text">Category: <%= @restaurant.category %></p>
+       <p><%= link_to "Add a review", new_restaurant_review_path(@restaurant.id) %></p>
+       <% @restaurant.reviews.each do |review|%>
+       <div class="card">
+       <div class="card-body">
+        <p class="card-text"><%= review.content %></p>
+        <p class="card-text"><%= review.rating %>/5 </p>
+       <% end %>
+       </div>
+       </div>
+    <a href="#"><%= link_to "Restaurants List", restaurants_path  %></a>
+  </div>
+</div>
+</div>
